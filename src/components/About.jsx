@@ -11,32 +11,7 @@ import {
 
 const About = () => {
 
-  const partnerHospitals = [
-    {
-      name: "Clinique Al Madina",
-      city: "Casablanca",
-      specialties: ["Cardiologie", "Chirurgie", "Oncologie"],
-      image: "https://images.unsplash.com/photo-1519494140681-8b17d830a3e9?w=400&h=300&fit=crop",
-      rating: 4.9,
-      beds: 200
-    },
-    {
-      name: "Hôpital Privé de Marrakech",
-      city: "Marrakech",
-      specialties: ["Neurologie", "Orthopédie", "Dermatologie"],
-      image: "https://images.unsplash.com/photo-1586773860418-d37222d8fce3?w=400&h=300&fit=crop",
-      rating: 4.8,
-      beds: 150
-    },
-    {
-      name: "Centre Médical Rabat",
-      city: "Rabat",
-      specialties: ["Imagerie", "Analyses", "Consultations"],
-      image: "https://images.unsplash.com/photo-1551601651-bc60e02d7f16?w=400&h=300&fit=crop",
-      rating: 4.7,
-      beds: 100
-    }
-  ];
+
 
 
 
@@ -131,68 +106,7 @@ const About = () => {
 
 
 
-        {/* Partner Hospitals */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
-          <h3 className="text-3xl font-bold text-gray-900 text-center mb-12">Nos Hôpitaux Partenaires</h3>
-          
-          <div className="grid md:grid-cols-3 gap-8">
-            {partnerHospitals.map((hospital, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
-              >
-                <img 
-                  src={hospital.image} 
-                  alt={hospital.name}
-                  className="w-full h-48 object-cover"
-                />
-                
-                <div className="p-6">
-                  <div className="flex items-center justify-between mb-2">
-                    <h4 className="text-xl font-bold text-gray-900">{hospital.name}</h4>
-                    <div className="flex items-center text-yellow-500">
-                      <span className="text-sm font-semibold mr-1">{hospital.rating}</span>
-                      <div className="flex">
-                        {[...Array(5)].map((_, i) => (
-                          <svg key={i} className="w-4 h-4 fill-current" viewBox="0 0 20 20">
-                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
-                          </svg>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <p className="text-gray-600 mb-4">{hospital.city}</p>
-                  
-                  <div className="mb-4">
-                    <span className="font-semibold text-gray-900 text-sm">Spécialités :</span>
-                    <div className="flex flex-wrap gap-2 mt-2">
-                      {hospital.specialties.map((specialty, specIndex) => (
-                        <span key={specIndex} className="bg-primary-100 text-primary-700 px-2 py-1 rounded text-xs">
-                          {specialty}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-center justify-between text-sm text-gray-600">
-                    <span>{hospital.beds} lits</span>
-                    <button className="text-primary-600 hover:text-primary-700 font-semibold">
-                      Voir plus →
-                    </button>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
+
       </div>
     </section>
   );

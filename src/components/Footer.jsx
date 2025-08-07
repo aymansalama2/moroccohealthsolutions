@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import {
   HeartIcon,
@@ -6,12 +6,15 @@ import {
   EnvelopeIcon,
   MapPinIcon,
   ClockIcon,
-  GlobeAltIcon,
-  ShieldCheckIcon,
-  DocumentCheckIcon
+  CheckIcon,
+  ExclamationTriangleIcon
 } from '@heroicons/react/24/outline';
 
 const Footer = () => {
+  const [email, setEmail] = useState('');
+  const [isSubscribing, setIsSubscribing] = useState(false);
+  const [subscriptionStatus, setSubscriptionStatus] = useState('');
+
   const services = [
     "Tests Sanguins Complets",
     "Imagerie Médicale",
@@ -29,12 +32,38 @@ const Footer = () => {
     { name: "Témoignages", href: "#temoignages" }
   ];
 
-  const certifications = [
-    "ISO 9001:2015",
-    "Ministère de la Santé",
-    "Certification Internationale",
-    "Normes Européennes"
-  ];
+  const handleSubscribe = async (e) => {
+    e.preventDefault();
+    
+    if (!email.trim()) {
+      setSubscriptionStatus('error');
+      return;
+    }
+
+    setIsSubscribing(true);
+    setSubscriptionStatus('');
+
+    try {
+      // Simulation d'une requête API
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      
+      // Ici vous pouvez ajouter votre logique d'API réelle
+      // await fetch('/api/newsletter', {
+      //   method: 'POST',
+      //   headers: { 'Content-Type': 'application/json' },
+      //   body: JSON.stringify({ email })
+      // });
+
+      setSubscriptionStatus('success');
+      setEmail('');
+    } catch (error) {
+      setSubscriptionStatus('error');
+    } finally {
+      setIsSubscribing(false);
+    }
+  };
+
+
 
   return (
     <footer className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white">
@@ -61,20 +90,7 @@ const Footer = () => {
               Nous facilitons l'accès aux soins pour vos clients d'Afrique.
             </p>
             
-            <div className="space-y-4">
-              <div className="flex items-center space-x-3">
-                <ShieldCheckIcon className="h-5 w-5 text-accent-400" />
-                <span className="text-sm text-gray-300">Certifié ISO 9001:2015</span>
-              </div>
-              <div className="flex items-center space-x-3">
-                <DocumentCheckIcon className="h-5 w-5 text-accent-400" />
-                <span className="text-sm text-gray-300">Agréé Ministère de la Santé</span>
-              </div>
-              <div className="flex items-center space-x-3">
-                <GlobeAltIcon className="h-5 w-5 text-accent-400" />
-                <span className="text-sm text-gray-300">Rapports internationaux</span>
-              </div>
-            </div>
+
           </motion.div>
 
           {/* Services */}
@@ -116,17 +132,7 @@ const Footer = () => {
               ))}
             </ul>
             
-            <div className="mt-8">
-              <h5 className="text-md font-semibold mb-4 text-white">Certifications</h5>
-              <ul className="space-y-2">
-                {certifications.map((cert, index) => (
-                  <li key={index} className="text-gray-400 text-sm flex items-center space-x-2">
-                    <div className="w-1 h-1 bg-gray-500 rounded-full"></div>
-                    <span>{cert}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+
           </motion.div>
 
           {/* Contact Info */}
@@ -189,16 +195,47 @@ const Footer = () => {
               Recevez nos dernières actualités et offres spéciales directement dans votre boîte mail.
             </p>
             
-            <div className="max-w-md mx-auto flex space-x-4">
-              <input
-                type="email"
-                placeholder="Votre adresse email"
-                className="flex-1 px-4 py-3 bg-gray-800 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:ring-2 focus:ring-accent-500 focus:border-transparent"
-              />
-              <button className="bg-accent-500 hover:bg-accent-600 text-white font-semibold px-6 py-3 rounded-lg transition-colors">
-                S'abonner
-              </button>
-            </div>
+            <form onSubmit={handleSubscribe} className="max-w-md mx-auto">
+              <div className="flex space-x-4">
+                <input
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="Votre adresse email"
+                  className="flex-1 px-4 py-3 bg-gray-800 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:ring-2 focus:ring-accent-500 focus:border-transparent"
+                  disabled={isSubscribing}
+                />
+                <button 
+                  type="submit"
+                  disabled={isSubscribing || !email.trim()}
+                  className="bg-accent-500 hover:bg-accent-600 disabled:bg-gray-600 disabled:cursor-not-allowed text-white font-semibold px-6 py-3 rounded-lg transition-colors flex items-center"
+                >
+                  {isSubscribing ? (
+                    <>
+                      <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
+                      Envoi...
+                    </>
+                  ) : (
+                    'S\'abonner'
+                  )}
+                </button>
+              </div>
+              
+              {/* Status Messages */}
+              {subscriptionStatus === 'success' && (
+                <div className="mt-3 flex items-center text-green-400 text-sm">
+                  <CheckIcon className="h-4 w-4 mr-2" />
+                  Inscription réussie ! Vérifiez votre boîte mail.
+                </div>
+              )}
+              
+              {subscriptionStatus === 'error' && (
+                <div className="mt-3 flex items-center text-red-400 text-sm">
+                  <ExclamationTriangleIcon className="h-4 w-4 mr-2" />
+                  {!email.trim() ? 'Veuillez entrer une adresse email.' : 'Erreur lors de l\'inscription. Réessayez.'}
+                </div>
+              )}
+            </form>
           </div>
         </motion.div>
       </div>
@@ -208,7 +245,7 @@ const Footer = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-gray-400 text-sm">
-              © 2024 Morocco Health Solutions. Tous droits réservés.
+              © 2025 Morocco Health Solutions. Tous droits réservés.
             </div>
             
             <div className="flex items-center space-x-6 text-sm text-gray-400">

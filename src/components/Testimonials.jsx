@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { 
   StarIcon, 
-  PlayIcon,
   MapPinIcon,
   CalendarIcon,
   HeartIcon,
@@ -24,7 +23,7 @@ const Testimonials = () => {
       city: "Dakar",
       service: "Chirurgie Cardiaque",
       procedure: "Pontage coronarien",
-      date: "Mars 2024",
+      date: "Mars 2025",
       rating: 5,
       image: "https://images.unsplash.com/photo-1494790108755-2616b612b1c1?w=150&h=150&fit=crop&crop=face",
       quote: "Je pensais que je ne pourrais jamais me faire opérer du cœur à cause des coûts en Europe. Grâce à Morocco Health Solutions, j'ai eu accès aux meilleurs cardiologues à Casablanca. L'équipe m'a accompagnée depuis Dakar jusqu'à ma complète guérison.",
@@ -33,8 +32,7 @@ const Testimonials = () => {
         duration: "10 jours au Maroc",
         hospital: "Clinique Al Madina, Casablanca",
         doctor: "Dr. Rachid Benali, Cardiologue"
-      },
-      videoTestimonial: true
+      }
     },
     {
       id: 2,
@@ -45,7 +43,7 @@ const Testimonials = () => {
       city: "Bamako",
       service: "Bilan de Santé Complet",
       procedure: "Check-up cardiologique et analyses",
-      date: "Février 2024",
+      date: "Février 2025",
       rating: 5,
       image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
       quote: "En tant qu'entrepreneur, ma santé est cruciale. Le bilan complet au Maroc m'a permis de détecter un problème cardiaque précoce. Le professionnalisme de l'équipe et la qualité des équipements m'ont impressionné.",
@@ -54,8 +52,7 @@ const Testimonials = () => {
         duration: "3 jours au Maroc",
         hospital: "Hôpital Privé de Marrakech",
         doctor: "Dr. Fatima Zahra, Médecine Interne"
-      },
-      videoTestimonial: false
+      }
     },
     {
       id: 3,
@@ -66,7 +63,7 @@ const Testimonials = () => {
       city: "Abidjan",
       service: "Imagerie Médicale",
       procedure: "IRM et Scanner complets",
-      date: "Janvier 2024",
+      date: "Janvier 2025",
       rating: 5,
       image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face",
       quote: "Les douleurs dorsales me handicapaient depuis des mois. Les examens au Maroc ont révélé le problème exact. La technologie utilisée est la même qu'en Europe, mais à prix abordable. Je recommande vivement !",
@@ -75,8 +72,7 @@ const Testimonials = () => {
         duration: "2 jours au Maroc",
         hospital: "Centre de Radiologie Moderne, Rabat",
         doctor: "Dr. Hassan El Amri, Radiologue"
-      },
-      videoTestimonial: true
+      }
     },
     {
       id: 4,
@@ -87,7 +83,7 @@ const Testimonials = () => {
       city: "Conakry",
       service: "Consultation Spécialisée",
       procedure: "Traitement neurologique",
-      date: "Avril 2024",
+      date: "Avril 2025",
       rating: 5,
       image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face",
       quote: "Souffrant de migraines chroniques, j'ai consulté plusieurs médecins sans succès. Le neurologue au Maroc a immédiatement identifié la cause et proposé un traitement efficace. Résultat : 90% d'amélioration !",
@@ -96,8 +92,7 @@ const Testimonials = () => {
         duration: "5 jours au Maroc",
         hospital: "Clinique Neurologique, Casablanca",
         doctor: "Dr. Youssef Bennani, Neurologue"
-      },
-      videoTestimonial: false
+      }
     }
   ];
 
@@ -236,13 +231,7 @@ const Testimonials = () => {
                 </div>
               </div>
 
-              {/* Video Testimonial Button */}
-              {currentData.videoTestimonial && (
-                <button className="flex items-center justify-center bg-red-500 hover:bg-red-600 text-white font-semibold py-3 px-6 rounded-lg transition-colors">
-                  <PlayIcon className="h-5 w-5 mr-2" />
-                  Voir le Témoignage Vidéo
-                </button>
-              )}
+
             </div>
           </div>
 

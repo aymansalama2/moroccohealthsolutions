@@ -24,7 +24,7 @@ const Gallery = () => {
   const galleryImages = [
     {
       id: 1,
-      title: "Bloc Opératoire Cardiaque - Clinique Al Madina",
+      title: "Bloc Opératoire Moderne",
       description: "Salle d'opération équipée des dernières technologies pour chirurgie cardiaque",
       image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&h=600&fit=crop",
       category: 'cliniques',
@@ -33,17 +33,17 @@ const Gallery = () => {
     },
     {
       id: 2,
-      title: "IRM 3 Tesla Dernière Génération",
+      title: "Équipement IRM de Pointe",
       description: "Équipement d'imagerie médicale de pointe pour diagnostics précis",
       image: "https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?w=800&h=600&fit=crop",
       category: 'equipements',
-      location: "Rabat",
+      location: "Casablanca",
       type: "photo"
     },
     {
       id: 3,
-      title: "Dr. Rachid Benali en Consultation",
-      description: "Notre cardiologue principal lors d'une consultation avec un patient du Sénégal",
+      title: "Consultation Médicale",
+      description: "Notre cardiologue principal lors d'une consultation avec un patient",
       image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=800&h=600&fit=crop",
       category: 'equipe',
       location: "Casablanca",
@@ -51,16 +51,16 @@ const Gallery = () => {
     },
     {
       id: 4,
-      title: "Laboratoire d'Analyses Médicales",
+      title: "Laboratoire d'Analyses",
       description: "Laboratoire moderne pour tous types d'analyses sanguines et biologiques",
       image: "https://images.unsplash.com/photo-1582719471384-894fbb16e074?w=800&h=600&fit=crop",
       category: 'equipements',
-      location: "Marrakech",
+      location: "Casablanca",
       type: "photo"
     },
     {
       id: 5,
-      title: "Chambre Patient VIP",
+      title: "Chambre Patient Confortable",
       description: "Hébergement confortable pour les patients internationaux",
       image: "https://images.unsplash.com/photo-1586773860418-d37222d8fce3?w=800&h=600&fit=crop",
       category: 'cliniques',
@@ -69,66 +69,94 @@ const Gallery = () => {
     },
     {
       id: 6,
-      title: "Équipe Médicale Multiculturelle",
+      title: "Équipe Médicale",
       description: "Notre équipe avec des patients venus d'Afrique de l'Ouest",
       image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=800&h=600&fit=crop",
       category: 'equipe',
-      location: "Rabat",
+      location: "Casablanca",
       type: "photo"
     },
+
     {
       id: 7,
-      title: "Scanner Multi-Barrettes 128 Coupes",
-      description: "Technologie avancée pour imagerie corporelle complète",
-      image: "https://images.unsplash.com/photo-1551601651-bc60e02d7f16?w=800&h=600&fit=crop",
-      category: 'equipements',
+      title: "Examen Cardiologique",
+      description: "Examen ECG avec équipement de dernière génération",
+      image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&h=600&fit=crop",
+      category: 'services',
       location: "Casablanca",
       type: "photo"
     },
     {
       id: 8,
-      title: "Consultation Cardiologique",
-      description: "Examen ECG avec équipement de dernière génération",
-      image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&h=600&fit=crop",
-      category: 'services',
-      location: "Marrakech",
+      title: "Clinique Moderne",
+      description: "Nos installations médicales de dernière génération",
+      image: "https://images.unsplash.com/photo-1519494140681-8b17d830a3e9?w=800&h=600&fit=crop",
+      category: 'cliniques',
+      location: "Casablanca",
       type: "photo"
     },
     {
       id: 9,
-      title: "Visite Virtuelle de nos Installations",
-      description: "Découvrez nos cliniques en vidéo 360°",
-      image: "https://images.unsplash.com/photo-1519494140681-8b17d830a3e9?w=800&h=600&fit=crop",
-      category: 'cliniques',
-      location: "Casablanca",
-      type: "video"
-    },
-    {
-      id: 10,
-      title: "Accueil des Patients Internationaux",
-      description: "Notre équipe d'accueil multilingue à l'aéroport Mohammed V",
+      title: "Accueil Patient",
+      description: "Notre équipe d'accueil multilingue pour patients internationaux",
       image: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=800&h=600&fit=crop",
       category: 'services',
       location: "Aéroport Casablanca",
       type: "photo"
     },
     {
-      id: 11,
-      title: "Échographie 4D Dernière Génération",
-      description: "Équipement d'échographie haute définition pour diagnostic précis",
-      image: "https://images.unsplash.com/photo-1559757175-5965c3b3c3e7?w=800&h=600&fit=crop",
+      id: 10,
+      title: "Équipement de Diagnostic",
+      description: "Technologies de pointe pour diagnostics précis",
+      image: "https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=800&h=600&fit=crop",
       category: 'equipements',
-      location: "Rabat",
+      location: "Casablanca",
+      type: "photo"
+    },
+    {
+      id: 11,
+      title: "Équipe Soignante",
+      description: "Notre équipe médicale dévouée et professionnelle",
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=600&fit=crop",
+      category: 'equipe',
+      location: "Casablanca",
       type: "photo"
     },
     {
       id: 12,
-      title: "Témoignage Patient - Aminata du Sénégal",
-      description: "Retour d'expérience après chirurgie cardiaque réussie",
-      image: "https://images.unsplash.com/photo-1494790108755-2616b612b1c1?w=800&h=600&fit=crop",
+      title: "Salle de Diagnostic Neurologique",
+      description: "Équipements spécialisés pour diagnostic neurologique avancé",
+      image: "/images/salle-de-clinique-pour-le-diagnostic-neurologique.jpg",
+      category: 'equipements',
+      location: "Casablanca",
+      type: "photo"
+    },
+    {
+      id: 13,
+      title: "Chirurgie en Cours",
+      description: "Intervention chirurgicale avec équipe médicale professionnelle",
+      image: "/images/pexels-photo-7583380.jpeg",
+      category: 'cliniques',
+      location: "Casablanca",
+      type: "photo"
+    },
+    {
+      id: 14,
+      title: "Équipe Médicale Africaine",
+      description: "Groupe d'étudiants en médecine africains dans les escaliers",
+      image: "/images/groupe-d-etudiants-en-medecine-africains-au-college-debout-dans-les-escaliers.jpg",
       category: 'equipe',
       location: "Casablanca",
-      type: "video"
+      type: "photo"
+    },
+    {
+      id: 15,
+      title: "Médecin avec Stéthoscope",
+      description: "Jeune médecin professionnel avec stéthoscope rouge",
+      image: "/images/jeune-beau-medecin-dans-un-peignoir-medical-avec-stethoscope.jpg",
+      category: 'equipe',
+      location: "Casablanca",
+      type: "photo"
     }
   ];
 
