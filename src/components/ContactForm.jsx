@@ -177,7 +177,7 @@ const ContactForm = () => {
             className="fixed bottom-6 right-6 z-50"
           >
             <a
-              href="#contact"
+              href="https://wa.me/212657104984?text=Bonjour, je souhaiterais obtenir des informations sur vos services médicaux"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-2xl hover:shadow-3xl transform hover:scale-110 transition-all duration-200 flex items-center"
