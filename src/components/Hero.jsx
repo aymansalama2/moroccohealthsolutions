@@ -48,8 +48,8 @@ const Hero = () => {
       </div>
 
       {/* Éléments flottants élégants */}
-      <div className="absolute top-20 left-[10%] opacity-[0.15] rotate-12 mix-blend-soft-light">
-        <svg className="w-48 h-48 animate-float" viewBox="0 0 100 100">
+      <div className="absolute top-20 left-[10%] opacity-[0.15] rotate-12 mix-blend-soft-light hidden sm:block">
+        <svg className="w-32 h-32 sm:w-48 sm:h-48 animate-float" viewBox="0 0 100 100">
           <defs>
             <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
               <stop offset="0%" style={{ stopColor: 'rgb(129,140,248)', stopOpacity: 0.2 }} />
@@ -61,15 +61,15 @@ const Hero = () => {
         </svg>
       </div>
 
-      <div className="absolute bottom-40 right-[15%] opacity-[0.15] -rotate-12 mix-blend-soft-light">
-        <svg className="w-40 h-40 animate-pulse-slow" viewBox="0 0 100 100">
+      <div className="absolute bottom-40 right-[15%] opacity-[0.15] -rotate-12 mix-blend-soft-light hidden sm:block">
+        <svg className="w-24 h-24 sm:w-40 sm:h-40 animate-pulse-slow" viewBox="0 0 100 100">
           <path d="M20,50 a30,30 0 1,1 60,0 a30,30 0 1,1 -60,0" fill="none" stroke="rgba(147,197,253,0.3)" strokeWidth="2"/>
           <path d="M50 30v40M30 50h40" stroke="rgba(147,197,253,0.3)" strokeWidth="2"/>
         </svg>
       </div>
 
-      <div className="absolute top-1/3 right-[25%] opacity-[0.15] rotate-45 mix-blend-soft-light">
-        <svg className="w-32 h-32 animate-float" viewBox="0 0 100 100">
+      <div className="absolute top-1/3 right-[25%] opacity-[0.15] rotate-45 mix-blend-soft-light hidden md:block">
+        <svg className="w-20 h-20 md:w-32 md:h-32 animate-float" viewBox="0 0 100 100">
           <rect x="25" y="25" width="50" height="50" rx="10" fill="none" stroke="rgba(199,210,254,0.3)" strokeWidth="2"/>
           <path d="M50 35v30M35 50h30" stroke="rgba(199,210,254,0.3)" strokeWidth="2"/>
         </svg>
@@ -85,8 +85,8 @@ const Hero = () => {
         <div className="absolute bottom-1/4 right-1/4 w-1/2 h-1/2 bg-gradient-to-br from-blue-500/10 via-transparent to-purple-500/10 blur-3xl"></div>
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-24">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Left Content */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -96,71 +96,71 @@ const Hero = () => {
           >
             <div className="mb-6">
 
-              <span className="inline-block bg-accent-500 text-white px-4 py-2 rounded-full text-sm font-semibold mb-4">
+              <span className="inline-block bg-accent-500 text-white px-3 py-2 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-semibold mb-4">
                 ✨ Service Premium d'Excellence
               </span>
-              <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-6 bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-teal-400">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4 sm:mb-6 bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-teal-400">
                 Morocco Health
                 <span className="block text-white"> Solutions</span>
               </h1>
-              <p className="text-xl text-blue-100 mb-8 leading-relaxed">
+              <p className="text-lg sm:text-xl text-blue-100 mb-6 sm:mb-8 leading-relaxed">
                 Morocco Health Solutions vous offre un accès privilégié aux meilleurs soins médicaux au Maroc.
                 Notre expertise au service de votre santé, avec des standards internationaux.
               </p>
             </div>
 
             {/* Benefits List */}
-            <div className="mb-8">
-              <ul className="space-y-3">
+            <div className="mb-6 sm:mb-8">
+              <ul className="space-y-2 sm:space-y-3">
                 {benefits.map((benefit, index) => (
                   <motion.li
                     key={index}
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.6, delay: index * 0.1 }}
-                    className="flex items-center text-blue-100"
+                    className="flex items-start text-blue-100 text-sm sm:text-base"
                   >
-                    <CheckCircleIcon className="h-5 w-5 text-accent-400 mr-3 flex-shrink-0" />
-                    {benefit}
+                    <CheckCircleIcon className="h-4 w-4 sm:h-5 sm:w-5 text-accent-400 mr-2 sm:mr-3 flex-shrink-0 mt-0.5" />
+                    <span>{benefit}</span>
                   </motion.li>
                 ))}
               </ul>
             </div>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
               <motion.a
                 href="#contact"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-accent-500 hover:bg-accent-600 text-white font-bold py-4 px-8 rounded-lg shadow-xl hover:shadow-2xl transition-all duration-200 flex items-center justify-center group"
+                className="bg-accent-500 hover:bg-accent-600 text-white font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-lg shadow-xl hover:shadow-2xl transition-all duration-200 flex items-center justify-center group text-sm sm:text-base"
               >
                 Commencer Maintenant
-                <ArrowRightIcon className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                <ArrowRightIcon className="ml-2 h-4 w-4 sm:h-5 sm:w-5 group-hover:translate-x-1 transition-transform" />
               </motion.a>
               <motion.a
                 href="#services"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-white/10 hover:bg-white/20 text-white font-semibold py-4 px-8 rounded-lg border-2 border-white/30 hover:border-white/50 transition-all duration-200 flex items-center justify-center backdrop-blur-sm"
+                className="bg-white/10 hover:bg-white/20 text-white font-semibold py-3 sm:py-4 px-6 sm:px-8 rounded-lg border-2 border-white/30 hover:border-white/50 transition-all duration-200 flex items-center justify-center backdrop-blur-sm text-sm sm:text-base"
               >
                 Découvrir nos Services
               </motion.a>
             </div>
 
             {/* Stats */}
-            <div className="mt-12 grid grid-cols-3 gap-8">
+            <div className="mt-8 sm:mt-12 grid grid-cols-3 gap-4 sm:gap-8">
               <div className="text-center">
-                <div className="text-3xl font-bold text-accent-400">500+</div>
-                <div className="text-blue-200 text-sm">Patients Satisfaits</div>
+                <div className="text-2xl sm:text-3xl font-bold text-accent-400">500+</div>
+                <div className="text-blue-200 text-xs sm:text-sm">Patients Satisfaits</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-accent-400">15+</div>
-                <div className="text-blue-200 text-sm">Spécialités Médicales</div>
+                <div className="text-2xl sm:text-3xl font-bold text-accent-400">15+</div>
+                <div className="text-blue-200 text-xs sm:text-sm">Spécialités Médicales</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-accent-400">24/7</div>
-                <div className="text-blue-200 text-sm">Assistance Médicale</div>
+                <div className="text-2xl sm:text-3xl font-bold text-accent-400">24/7</div>
+                <div className="text-blue-200 text-xs sm:text-sm">Assistance Médicale</div>
               </div>
             </div>
           </motion.div>
@@ -177,13 +177,13 @@ const Hero = () => {
                 <img 
                   src="/images/Download_free_png_of_PNG_Doctor_adult_white_background_stethoscope__by_Sakarin_Sukmanatham_about_african_doctor__doctor__black_doctor__africans_doctor_png__and_smiling_lab_13278558-removebg-preview.png" 
                   alt="Docteur Morocco Health Solutions" 
-                  className="w-full h-auto max-w-md object-contain"
+                  className="w-full h-auto max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg object-contain"
                 />
               </div>
               
               {/* Floating Elements */}
-              <div className="absolute -top-4 -right-4 w-8 h-8 bg-accent-400 rounded-full animate-pulse"></div>
-              <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-yellow-400 rounded-full animate-bounce"></div>
+              <div className="absolute -top-2 -right-2 sm:-top-4 sm:-right-4 w-6 h-6 sm:w-8 sm:h-8 bg-accent-400 rounded-full animate-pulse"></div>
+              <div className="absolute -bottom-2 -left-2 sm:-bottom-4 sm:-left-4 w-4 h-4 sm:w-6 sm:h-6 bg-yellow-400 rounded-full animate-bounce"></div>
             </div>
           </motion.div>
         </div>
