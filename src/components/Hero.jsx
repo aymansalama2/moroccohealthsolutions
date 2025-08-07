@@ -175,7 +175,7 @@ const Hero = () => {
             <div className="relative">
               <div className="flex items-center justify-center">
                 <img 
-                  src="/images/Old_doctors_group-removebg-preview.png"
+                  src="/images/Download_free_png_of_PNG_Doctor_adult_white_background_stethoscope__by_Sakarin_Sukmanatham_about_african_doctor__doctor__black_doctor__africans_doctor_png__and_smiling_lab_13278558-removebg-preview.png" 
                   alt="Docteur Morocco Health Solutions" 
                   className="w-full h-auto max-w-md object-contain"
                 />
