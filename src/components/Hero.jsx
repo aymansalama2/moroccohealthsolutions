@@ -173,11 +173,11 @@ const Hero = () => {
             className="relative"
           >
             <div className="relative">
-              <div className="flex items-center justify-center">
+              <div className="flex items-center justify-center mt-[-160px] sm:mt-[-220px] md:mt-[-280px]">
                 <img 
-                  src="/images/Download_free_png_of_PNG_Doctor_adult_white_background_stethoscope__by_Sakarin_Sukmanatham_about_african_doctor__doctor__black_doctor__africans_doctor_png__and_smiling_lab_13278558-removebg-preview.png" 
+                  src="/images/Digital_Healthcare_Professional-removebg-preview.png" 
                   alt="Docteur Morocco Health Solutions" 
-                  className="w-full h-auto max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg object-contain"
+                  className="w-full h-auto max-w-xl sm:max-w-2xl md:max-w-3xl lg:max-w-4xl object-contain"
                 />
               </div>
               

@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useForm } from 'react-hook-form';
-import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
-import { db } from '../firebase';
 import {
   UserIcon,
   EnvelopeIcon,
@@ -58,12 +56,34 @@ const ContactForm = () => {
   const onSubmit = async (data) => {
     setIsSubmitting(true);
     try {
-      // Ajouter les données au Firestore
-      await addDoc(collection(db, 'contact-requests'), {
-        ...data,
-        timestamp: serverTimestamp(),
-        status: 'nouveau'
-      });
+      // Préparer le contenu de l'email
+      const emailContent = `
+Nouvelle demande de contact - Morocco Health Solutions
+
+INFORMATIONS PERSONNELLES:
+- Nom complet: ${data.fullName}
+- Email: ${data.email}
+- Téléphone: ${data.phone}
+- Pays d'origine: ${data.country}
+
+DÉTAILS DU PROJET:
+- Nombre de clients: ${data.clientCount}
+- Date souhaitée: ${data.preferredDate || 'Non spécifiée'}
+- Services requis: ${Array.isArray(data.services) ? data.services.join(', ') : data.services}
+
+MESSAGE:
+${data.message || 'Aucun message supplémentaire'}
+
+---
+Envoyé depuis le formulaire de contact de Morocco Health Solutions
+Date: ${new Date().toLocaleString('fr-FR')}
+      `;
+
+      // Créer le lien mailto
+      const mailtoLink = `mailto:contact@moroccohealthsolutions.com?subject=Nouvelle demande de contact - ${data.fullName}&body=${encodeURIComponent(emailContent)}`;
+      
+      // Ouvrir le client email par défaut
+      window.location.href = mailtoLink;
       
       setSubmitStatus('success');
       reset();
@@ -291,8 +311,8 @@ const ContactForm = () => {
                 <div className="mb-6 bg-green-50 border border-green-200 rounded-lg p-4 flex items-center space-x-3">
                   <CheckCircleIcon className="h-6 w-6 text-green-600" />
                   <div>
-                    <h4 className="font-semibold text-green-800">Message envoyé avec succès !</h4>
-                    <p className="text-green-600 text-sm">Nous vous recontacterons dans les plus brefs délais.</p>
+                    <h4 className="font-semibold text-green-800">Formulaire rempli avec succès !</h4>
+                    <p className="text-green-600 text-sm">Votre client email s'ouvre automatiquement. Envoyez l'email pour finaliser votre demande.</p>
                   </div>
                 </div>
               )}
@@ -372,12 +392,50 @@ const ContactForm = () => {
                       <option value="">Sélectionner un pays</option>
                       <option value="senegal">Sénégal</option>
                       <option value="mali">Mali</option>
-                      <option value="burkina">Burkina Faso</option>
+                      <option value="burkina_faso">Burkina Faso</option>
                       <option value="cote_ivoire">Côte d'Ivoire</option>
-                      <option value="guinea">Guinée</option>
+                      <option value="guinee">Guinée</option>
+                      <option value="guinee_bissau">Guinée-Bissau</option>
                       <option value="niger">Niger</option>
-                      <option value="mauritania">Mauritanie</option>
-                      <option value="autre">Autre</option>
+                      <option value="mauritanie">Mauritanie</option>
+                      <option value="tchad">Tchad</option>
+                      <option value="cameroun">Cameroun</option>
+                      <option value="gabon">Gabon</option>
+                      <option value="congo">Congo</option>
+                      <option value="rdc">République Démocratique du Congo</option>
+                      <option value="togo">Togo</option>
+                      <option value="benin">Bénin</option>
+                      <option value="ghana">Ghana</option>
+                      <option value="liberia">Libéria</option>
+                      <option value="sierra_leone">Sierra Leone</option>
+                      <option value="gambie">Gambie</option>
+                      <option value="cap_vert">Cap-Vert</option>
+                      <option value="comores">Comores</option>
+                      <option value="madagascar">Madagascar</option>
+                      <option value="maurice">Maurice</option>
+                      <option value="seychelles">Seychelles</option>
+                      <option value="djibouti">Djibouti</option>
+                      <option value="somalie">Somalie</option>
+                      <option value="ethiopie">Éthiopie</option>
+                      <option value="erythree">Érythrée</option>
+                      <option value="soudan">Soudan</option>
+                      <option value="soudan_sud">Soudan du Sud</option>
+                      <option value="kenya">Kenya</option>
+                      <option value="tanzanie">Tanzanie</option>
+                      <option value="ouganda">Ouganda</option>
+                      <option value="rwanda">Rwanda</option>
+                      <option value="burundi">Burundi</option>
+                      <option value="angola">Angola</option>
+                      <option value="namibie">Namibie</option>
+                      <option value="botswana">Botswana</option>
+                      <option value="zimbabwe">Zimbabwe</option>
+                      <option value="zambie">Zambie</option>
+                      <option value="malawi">Malawi</option>
+                      <option value="mozambique">Mozambique</option>
+                      <option value="afrique_sud">Afrique du Sud</option>
+                      <option value="eswatini">Eswatini</option>
+                      <option value="lesotho">Lesotho</option>
+                      <option value="autre">Autre pays</option>
                     </select>
                     {errors.country && <p className="text-red-500 text-sm mt-1">{errors.country.message}</p>}
                   </div>
