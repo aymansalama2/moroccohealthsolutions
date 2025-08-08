@@ -25,7 +25,7 @@ const Testimonials = () => {
       procedure: "Pontage coronarien",
       date: "Mars 2025",
       rating: 5,
-      image: "https://images.unsplash.com/photo-1494790108755-2616b612b1c1?w=150&h=150&fit=crop&crop=face",
+      image: null,
       quote: "Je pensais que je ne pourrais jamais me faire opérer du cœur à cause des coûts en Europe. Grâce à Morocco Health Solutions, j'ai eu accès aux meilleurs cardiologues à Casablanca. L'équipe m'a accompagnée depuis Dakar jusqu'à ma complète guérison.",
       details: {
         savings: "75% moins cher qu'en France",
@@ -45,7 +45,7 @@ const Testimonials = () => {
       procedure: "Check-up cardiologique et analyses",
       date: "Février 2025",
       rating: 5,
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
+      image: null,
       quote: "En tant qu'entrepreneur, ma santé est cruciale. Le bilan complet au Maroc m'a permis de détecter un problème cardiaque précoce. Le professionnalisme de l'équipe et la qualité des équipements m'ont impressionné.",
       details: {
         savings: "60% moins cher qu'en Europe",
@@ -65,7 +65,7 @@ const Testimonials = () => {
       procedure: "IRM et Scanner complets",
       date: "Janvier 2025",
       rating: 5,
-      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face",
+      image: null,
       quote: "Les douleurs dorsales me handicapaient depuis des mois. Les examens au Maroc ont révélé le problème exact. La technologie utilisée est la même qu'en Europe, mais à prix abordable. Je recommande vivement !",
       details: {
         savings: "70% moins cher qu'en France",
@@ -85,7 +85,7 @@ const Testimonials = () => {
       procedure: "Traitement neurologique",
       date: "Avril 2025",
       rating: 5,
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face",
+      image: null,
       quote: "Souffrant de migraines chroniques, j'ai consulté plusieurs médecins sans succès. Le neurologue au Maroc a immédiatement identifié la cause et proposé un traitement efficace. Résultat : 90% d'amélioration !",
       details: {
         savings: "65% moins cher qu'en Europe",
@@ -160,11 +160,19 @@ const Testimonials = () => {
             {/* Left Side - Patient Info */}
             <div className="p-8 lg:p-12 bg-gradient-to-br from-primary-50 to-primary-100">
               <div className="flex items-center mb-6">
-                <img 
-                  src={currentData.image} 
-                  alt={currentData.name}
-                  className="w-20 h-20 rounded-full object-cover mr-6 border-4 border-white shadow-lg"
-                />
+                {currentData.image ? (
+                  <img 
+                    src={currentData.image} 
+                    alt={currentData.name}
+                    className="w-20 h-20 rounded-full object-cover mr-6 border-4 border-white shadow-lg"
+                  />
+                ) : (
+                  <div className="w-20 h-20 rounded-full bg-blue-100 border-4 border-blue-300 flex items-center justify-center mr-6 shadow-lg">
+                    <svg className="w-10 h-10 text-blue-600" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                    </svg>
+                  </div>
+                )}
                 <div>
                   <h3 className="text-2xl font-bold text-gray-900 mb-1">
                     {currentData.name}, {currentData.age} ans
@@ -285,11 +293,19 @@ const Testimonials = () => {
               }`}
             >
               <div className="flex items-center mb-4">
-                <img 
-                  src={testimonial.image} 
-                  alt={testimonial.name}
-                  className="w-12 h-12 rounded-full object-cover mr-3"
-                />
+                {testimonial.image ? (
+                  <img 
+                    src={testimonial.image} 
+                    alt={testimonial.name}
+                    className="w-12 h-12 rounded-full object-cover mr-3"
+                  />
+                ) : (
+                  <div className="w-12 h-12 rounded-full bg-blue-100 border-2 border-blue-300 flex items-center justify-center mr-3">
+                    <svg className="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                    </svg>
+                  </div>
+                )}
                 <div>
                   <div className="font-semibold text-gray-900">{testimonial.name}</div>
                   <div className="text-sm text-gray-600">{testimonial.country}</div>

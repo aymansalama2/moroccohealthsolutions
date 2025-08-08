@@ -1,113 +1,107 @@
-import React from 'react';
-import { ArrowRightIcon, CheckCircleIcon, GlobeAltIcon, HeartIcon, ClockIcon, UserGroupIcon, PhoneIcon, CalendarIcon } from '@heroicons/react/24/outline';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-
-
+import { 
+  CheckCircleIcon, 
+  ArrowRightIcon 
+} from '@heroicons/react/24/outline';
 
 const Hero = () => {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  const heroImages = [
+    "/images/asistant-medical.jpg",
+    "/images/Prefab-hospital-patient-room-.jpg",
+    "/images/image article 2.jpg",
+    "/images/article 4 2 .png",
+    "/images/salle-de-clinique-pour-le-diagnostic-neurologique.jpg",
+    "/images/un-medecin-qui-s-occupe-d-un-enfant-afro-americain.jpg"
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => 
+        prevIndex === heroImages.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 3000); // Change toutes les 3 secondes
+
+    return () => clearInterval(interval);
+  }, []);
+
   const benefits = [
-    "Expertise médicale marocaine de renommée internationale",
-    "Accompagnement personnalisé et suivi continu",
-    "Équipements de pointe et technologies avancées",
-    "Standards internationaux et certifications"
+    "Consultations avec des médecins spécialisés",
+    "Équipements médicaux de dernière génération",
+    "Accompagnement personnalisé en français",
+    "Tarifs 50-70% moins chers qu'en Europe"
   ];
 
   return (
-    <section id="accueil" className="relative overflow-hidden bg-gradient-to-br from-indigo-950 via-blue-900 to-cyan-800">
-      {/* Effet de particules brillantes */}
+    <section id="accueil" className="relative min-h-screen bg-gradient-to-br from-blue-900 via-blue-800 to-blue-900 overflow-hidden">
+      {/* Background Elements */}
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(56,189,248,0.1),transparent_50%)]"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(129,140,248,0.2),transparent_50%)]"></div>
+        <div className="absolute top-20 left-[10%] opacity-[0.15] rotate-12 mix-blend-soft-light hidden sm:block">
+          <svg className="w-32 h-32 sm:w-48 sm:h-48 animate-float" viewBox="0 0 100 100">
+            <circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" strokeWidth="2"/>
+            <circle cx="50" cy="50" r="20" fill="none" stroke="currentColor" strokeWidth="1"/>
+          </svg>
+        </div>
+        
+        <div className="absolute bottom-40 right-[15%] opacity-[0.15] -rotate-12 mix-blend-soft-light hidden sm:block">
+          <svg className="w-24 h-24 sm:w-40 sm:h-40 animate-pulse-slow" viewBox="0 0 100 100">
+            <rect x="20" y="20" width="60" height="60" fill="none" stroke="currentColor" strokeWidth="2"/>
+            <rect x="30" y="30" width="40" height="40" fill="none" stroke="currentColor" strokeWidth="1"/>
+          </svg>
+        </div>
+        
+        <div className="absolute top-1/3 right-[25%] opacity-[0.15] rotate-45 mix-blend-soft-light hidden md:block">
+          <svg className="w-20 h-20 md:w-32 md:h-32 animate-float" viewBox="0 0 100 100">
+            <polygon points="50,10 90,90 10,90" fill="none" stroke="currentColor" strokeWidth="2"/>
+            <polygon points="50,30 70,80 30,80" fill="none" stroke="currentColor" strokeWidth="1"/>
+          </svg>
+        </div>
       </div>
 
-      {/* Motifs géométriques modernes */}
-      <div className="absolute inset-0">
-        {/* Hexagones élégants */}
-        <div className="absolute inset-0" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M40 5l30 17.5v35L40 75 10 57.5v-35z' fill='none' stroke='rgba(255,255,255,0.07)' stroke-width='1' stroke-dasharray='4,4'/%3E%3C/svg%3E")`,
-          backgroundSize: '80px 80px'
-        }}></div>
-
-        {/* Cercles interconnectés */}
-        <div className="absolute inset-0" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='30' cy='30' r='20' fill='none' stroke='rgba(255,255,255,0.05)' stroke-width='0.5'/%3E%3Ccircle cx='30' cy='30' r='10' fill='none' stroke='rgba(255,255,255,0.07)' stroke-width='0.5'/%3E%3C/svg%3E")`,
-          backgroundSize: '60px 60px'
-        }}></div>
-
-        {/* Symboles médicaux modernes */}
-        <div className="absolute inset-0" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M50 35v30M35 50h30' stroke='rgba(255,255,255,0.04)' stroke-width='1'/%3E%3Ccircle cx='50' cy='50' r='25' fill='none' stroke='rgba(255,255,255,0.04)' stroke-width='1'/%3E%3C/svg%3E")`,
-          backgroundSize: '100px 100px'
-        }}></div>
-      </div>
-
-      {/* Effets de lumière dynamiques */}
-      <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-gradient-to-t from-blue-950/80 via-transparent to-indigo-900/30"></div>
-        <div className="absolute inset-0 bg-[conic-gradient(from_0deg_at_50%_50%,transparent_0deg,rgba(99,102,241,0.15)_180deg,transparent_360deg)]"></div>
-      </div>
-
-      {/* Éléments flottants élégants */}
-      <div className="absolute top-20 left-[10%] opacity-[0.15] rotate-12 mix-blend-soft-light hidden sm:block">
-        <svg className="w-32 h-32 sm:w-48 sm:h-48 animate-float" viewBox="0 0 100 100">
-          <defs>
-            <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" style={{ stopColor: 'rgb(129,140,248)', stopOpacity: 0.2 }} />
-              <stop offset="100%" style={{ stopColor: 'rgb(56,189,248)', stopOpacity: 0.2 }} />
-            </linearGradient>
-          </defs>
-          <circle cx="50" cy="50" r="45" fill="none" stroke="url(#grad1)" strokeWidth="2"/>
-          <path d="M50 20v60M20 50h60" stroke="white" strokeWidth="2" opacity="0.2"/>
-        </svg>
-      </div>
-
-      <div className="absolute bottom-40 right-[15%] opacity-[0.15] -rotate-12 mix-blend-soft-light hidden sm:block">
-        <svg className="w-24 h-24 sm:w-40 sm:h-40 animate-pulse-slow" viewBox="0 0 100 100">
-          <path d="M20,50 a30,30 0 1,1 60,0 a30,30 0 1,1 -60,0" fill="none" stroke="rgba(147,197,253,0.3)" strokeWidth="2"/>
-          <path d="M50 30v40M30 50h40" stroke="rgba(147,197,253,0.3)" strokeWidth="2"/>
-        </svg>
-      </div>
-
-      <div className="absolute top-1/3 right-[25%] opacity-[0.15] rotate-45 mix-blend-soft-light hidden md:block">
-        <svg className="w-20 h-20 md:w-32 md:h-32 animate-float" viewBox="0 0 100 100">
-          <rect x="25" y="25" width="50" height="50" rx="10" fill="none" stroke="rgba(199,210,254,0.3)" strokeWidth="2"/>
-          <path d="M50 35v30M35 50h30" stroke="rgba(199,210,254,0.3)" strokeWidth="2"/>
-        </svg>
-      </div>
-
-      {/* Effet de profondeur avancé */}
-      <div className="absolute inset-0 bg-gradient-to-br from-transparent via-blue-900/5 to-indigo-900/20 backdrop-blur-[1px]"></div>
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent,rgba(17,24,39,0.4))]"></div>
-
-      {/* Effet de brillance */}
-      <div className="absolute inset-0">
-        <div className="absolute top-1/4 left-1/4 w-1/2 h-1/2 bg-gradient-to-br from-cyan-500/10 via-transparent to-indigo-500/10 blur-3xl"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-1/2 h-1/2 bg-gradient-to-br from-blue-500/10 via-transparent to-purple-500/10 blur-3xl"></div>
-      </div>
-
+      {/* Main Content */}
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-24">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-          {/* Left Content */}
+          {/* Left Content - Text */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             className="text-white"
           >
-            <div className="mb-6">
-
+            {/* Badge */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+            >
               <span className="inline-block bg-accent-500 text-white px-3 py-2 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-semibold mb-4">
-                ✨ Service Premium d'Excellence
+                Excellence Médicale au Maroc
               </span>
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4 sm:mb-6 bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-teal-400">
-                Morocco Health
-                <span className="block text-white"> Solutions</span>
-              </h1>
-              <p className="text-lg sm:text-xl text-blue-100 mb-6 sm:mb-8 leading-relaxed">
-                Morocco Health Solutions vous offre un accès privilégié aux meilleurs soins médicaux au Maroc.
-                Notre expertise au service de votre santé, avec des standards internationaux.
-              </p>
-            </div>
+            </motion.div>
+
+            {/* Main Heading */}
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4 sm:mb-6 bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-teal-400"
+            >
+              Votre Santé, <br />
+              Notre Priorité
+            </motion.h1>
+
+            {/* Description */}
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="text-lg sm:text-xl text-blue-100 mb-6 sm:mb-8 leading-relaxed"
+            >
+              Morocco Health Solutions vous offre un accès privilégié aux meilleurs soins médicaux au Maroc.
+              Notre expertise au service de votre santé, avec des standards internationaux.
+            </motion.p>
 
             {/* Benefits List */}
             <div className="mb-6 sm:mb-8">
@@ -165,7 +159,7 @@ const Hero = () => {
             </div>
           </motion.div>
 
-          {/* Right Content - Medical Image/Illustration */}
+          {/* Right Content - Carousel d'images */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
@@ -173,17 +167,59 @@ const Hero = () => {
             className="relative"
           >
             <div className="relative">
-              <div className="flex items-center justify-center mt-[-160px] sm:mt-[-220px] md:mt-[-280px]">
-                <img 
-                  src="/images/Digital_Healthcare_Professional-removebg-preview.png" 
-                  alt="Docteur Morocco Health Solutions" 
-                  className="w-full h-auto max-w-xl sm:max-w-2xl md:max-w-3xl lg:max-w-4xl object-contain"
-                />
+                              <div className="flex items-center justify-center mt-8 lg:mt-[-40px] sm:mt-[-60px] md:mt-[-80px] lg:mt-[-100px]">
+                  <div className="relative w-full h-[400px] max-w-2xl sm:max-w-3xl md:max-w-4xl lg:max-w-5xl xl:max-w-6xl">
+                  {/* Images du carrousel */}
+                  {heroImages.map((image, index) => (
+                    <motion.img
+                      key={index}
+                      src={image}
+                      alt={`Image ${index + 1} Morocco Health Solutions`}
+                      className="absolute inset-0 w-full h-full object-cover rounded-2xl shadow-2xl border-4 border-white/20 backdrop-blur-sm"
+                      style={{
+                        boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.1)',
+                        filter: 'drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3))'
+                      }}
+                      initial={{ opacity: 0 }}
+                                              animate={{ 
+                          opacity: currentImageIndex === index ? 1 : 0,
+                          scale: currentImageIndex === index ? 1 : 0.85
+                        }}
+                        transition={{ 
+                          duration: 0.8,
+                          ease: "easeInOut"
+                        }}
+                    />
+                  ))}
+                  
+                  {/* Overlay avec gradient pour améliorer la lisibilité */}
+                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-t from-black/30 via-transparent to-transparent pointer-events-none"></div>
+                  
+                  {/* Indicateurs de navigation améliorés */}
+                  <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-4">
+                    {heroImages.map((_, index) => (
+                      <button
+                        key={index}
+                        onClick={() => setCurrentImageIndex(index)}
+                        className={`w-5 h-5 rounded-full transition-all duration-300 transform hover:scale-125 ${
+                          currentImageIndex === index 
+                            ? 'bg-accent-400 scale-125 shadow-lg shadow-accent-400/50' 
+                            : 'bg-white/70 hover:bg-white/90 hover:scale-110'
+                        }`}
+                        style={{
+                          boxShadow: currentImageIndex === index 
+                            ? '0 0 20px rgba(34, 197, 94, 0.5)' 
+                            : '0 2px 8px rgba(0, 0, 0, 0.2)'
+                        }}
+                      />
+                    ))}
+                  </div>
+                </div>
               </div>
               
-              {/* Floating Elements */}
-              <div className="absolute -top-2 -right-2 sm:-top-4 sm:-right-4 w-6 h-6 sm:w-8 sm:h-8 bg-accent-400 rounded-full animate-pulse"></div>
-              <div className="absolute -bottom-2 -left-2 sm:-bottom-4 sm:-left-4 w-4 h-4 sm:w-6 sm:h-6 bg-yellow-400 rounded-full animate-bounce"></div>
+              {/* Floating Elements améliorés */}
+              <div className="absolute -top-4 -right-4 sm:-top-6 sm:-right-6 w-8 h-8 sm:w-10 sm:h-10 bg-accent-400 rounded-full animate-pulse shadow-lg shadow-accent-400/50"></div>
+              <div className="absolute -bottom-4 -left-4 sm:-bottom-6 sm:-left-6 w-6 h-6 sm:w-8 sm:h-8 bg-yellow-400 rounded-full animate-bounce shadow-lg shadow-yellow-400/50"></div>
             </div>
           </motion.div>
         </div>
