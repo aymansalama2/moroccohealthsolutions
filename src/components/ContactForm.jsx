@@ -228,55 +228,55 @@ Date: ${new Date().toLocaleString('fr-FR')}
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-3 gap-12">
+        <div className="grid lg:grid-cols-3 gap-8 lg:gap-12">
           {/* Contact Info */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
-            className="lg:col-span-1"
+            className="lg:col-span-1 order-2 lg:order-1"
           >
-            <div className="bg-gradient-to-br from-primary-600 to-primary-700 rounded-3xl p-8 text-white h-fit">
-              <h3 className="text-2xl font-bold mb-6">Informations de Contact</h3>
+            <div className="bg-gradient-to-br from-primary-600 to-primary-700 rounded-2xl sm:rounded-3xl p-6 sm:p-8 text-white h-fit">
+              <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6">Informations de Contact</h3>
               
-              <div className="space-y-6">
-                <div className="flex items-start space-x-4">
-                  <div className="bg-white/20 p-3 rounded-lg">
-                    <PhoneIcon className="h-6 w-6" />
+              <div className="space-y-4 sm:space-y-6">
+                <div className="flex items-start space-x-3 sm:space-x-4">
+                  <div className="bg-white/20 p-2 sm:p-3 rounded-lg flex-shrink-0">
+                    <PhoneIcon className="h-5 w-5 sm:h-6 sm:w-6" />
                   </div>
-                  <div>
-                    <h4 className="font-semibold mb-1">Téléphone</h4>
-                    <p className="text-primary-100">Contactez-nous</p>
-                    <p className="text-primary-100 text-sm">Nous vous répondrons rapidement</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start space-x-4">
-                  <div className="bg-white/20 p-3 rounded-lg">
-                    <EnvelopeIcon className="h-6 w-6" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold mb-1">Email</h4>
-                    <p className="text-primary-100">contact@moroccohealthsolutions.com</p>
-                    <p className="text-primary-100 text-sm">Réponse sous 2h</p>
+                  <div className="min-w-0 flex-1">
+                    <h4 className="font-semibold mb-1 text-sm sm:text-base">Téléphone</h4>
+                    <p className="text-primary-100 text-sm sm:text-base break-words">Contactez-nous</p>
+                    <p className="text-primary-100 text-xs sm:text-sm">Nous vous répondrons rapidement</p>
                   </div>
                 </div>
 
-                <div className="flex items-start space-x-4">
-                  <div className="bg-white/20 p-3 rounded-lg">
-                    <MapPinIcon className="h-6 w-6" />
+                <div className="flex items-start space-x-3 sm:space-x-4">
+                  <div className="bg-white/20 p-2 sm:p-3 rounded-lg flex-shrink-0">
+                    <EnvelopeIcon className="h-5 w-5 sm:h-6 sm:w-6" />
                   </div>
-                  <div>
-                    <h4 className="font-semibold mb-1">Adresse</h4>
-                    <p className="text-primary-100">Casablanca, Maroc</p>
-                    <p className="text-primary-100 text-sm">Cliniques partenaires dans tout le pays</p>
+                  <div className="min-w-0 flex-1">
+                    <h4 className="font-semibold mb-1 text-sm sm:text-base">Email</h4>
+                    <p className="text-primary-100 text-sm sm:text-base break-all">contact@moroccohealthsolutions.com</p>
+                    <p className="text-primary-100 text-xs sm:text-sm">Réponse sous 2h</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start space-x-3 sm:space-x-4">
+                  <div className="bg-white/20 p-2 sm:p-3 rounded-lg flex-shrink-0">
+                    <MapPinIcon className="h-5 w-5 sm:h-6 sm:w-6" />
+                  </div>
+                  <div className="min-w-0 flex-1">
+                    <h4 className="font-semibold mb-1 text-sm sm:text-base">Adresse</h4>
+                    <p className="text-primary-100 text-sm sm:text-base">Casablanca, Maroc</p>
+                    <p className="text-primary-100 text-xs sm:text-sm">Cliniques partenaires dans tout le pays</p>
                   </div>
                 </div>
               </div>
 
-              <div className="mt-8 pt-8 border-t border-white/20">
-                <h4 className="font-semibold mb-4">Temps de Réponse</h4>
-                <div className="grid grid-cols-2 gap-4 text-sm">
+              <div className="mt-6 sm:mt-8 pt-6 sm:pt-8 border-t border-white/20">
+                <h4 className="font-semibold mb-3 sm:mb-4 text-sm sm:text-base">Temps de Réponse</h4>
+                <div className="grid grid-cols-2 gap-3 sm:gap-4 text-xs sm:text-sm">
                   <div>
                     <div className="font-semibold">Email</div>
                     <div className="text-primary-100">2 heures</div>
@@ -303,9 +303,9 @@ Date: ${new Date().toLocaleString('fr-FR')}
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="lg:col-span-2"
+            className="lg:col-span-2 order-1 lg:order-2"
           >
-            <div className="bg-white rounded-3xl shadow-xl p-8 border border-gray-100">
+            <div className="bg-white rounded-2xl sm:rounded-3xl shadow-xl p-6 sm:p-8 border border-gray-100">
               {/* Status Messages */}
               {submitStatus === 'success' && (
                 <div className="mb-6 bg-green-50 border border-green-200 rounded-lg p-4 flex items-center space-x-3">
