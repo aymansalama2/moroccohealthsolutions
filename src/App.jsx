@@ -9,7 +9,7 @@ import Gallery from './components/Gallery';
 import Blog from './components/Blog';
 import ContactForm from './components/ContactForm';
 import Footer from './components/Footer';
-import SuperAdmin from './components/SuperAdmin';
+import SuperAdmin from './components/SuperAdminV2';
 import useKeySequence from './hooks/useKeySequence';
 import visitorService from './services/visitorService';
 

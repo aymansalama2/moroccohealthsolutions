@@ -96,7 +96,7 @@ Date: ${new Date().toLocaleString('fr-FR')}
       // Reset status after 8 seconds
       setTimeout(() => setSubmitStatus(null), 8000);
     } catch (error) {
-      console.error('Erreur lors de l\'envoi:', error);
+              // Erreur silencieuse
       setSubmitStatus('error');
       setTimeout(() => setSubmitStatus(null), 5000);
     } finally {

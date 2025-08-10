@@ -32,7 +32,6 @@ class VisitorService {
       // Si toutes les APIs échouent, utiliser WebRTC pour obtenir l'IP locale
       return await this.getLocalIP();
     } catch (error) {
-      console.warn('Impossible d\'obtenir l\'IP:', error);
       return 'IP non disponible';
     }
   }
@@ -142,7 +141,6 @@ class VisitorService {
             }
           }
         } catch (e) {
-          console.warn(`Erreur API géo ${api.url}:`, e);
           continue;
         }
       }
@@ -150,7 +148,6 @@ class VisitorService {
       // Fallback si toutes les APIs échouent - utiliser la géolocalisation du navigateur
       return await this.getBrowserLocation();
     } catch (error) {
-      console.warn('Erreur géolocalisation:', error);
       return { 
         city: 'Inconnu', 
         country: 'Inconnu', 
@@ -197,13 +194,12 @@ class VisitorService {
               }
             }
           } catch (e) {
-            console.warn('Erreur géocodage inverse:', e);
+            // Erreur géocodage inverse ignorée
           }
           
           resolve({ city: 'Position obtenue', country: 'Géolocalisation', region: 'GPS' });
         },
         (error) => {
-          console.warn('Erreur géolocalisation navigateur:', error);
           resolve({ city: 'Permission refusée', country: 'Géolocalisation', region: 'Bloquée' });
         },
         { timeout: 10000, enableHighAccuracy: false }
@@ -267,10 +263,8 @@ class VisitorService {
       };
 
       this.saveVisit(visit);
-      console.log('✅ Visite trackée:', { ip: visit.ip, location: `${visit.city}, ${visit.country}`, device: visit.deviceType });
       return visit;
     } catch (error) {
-      console.error('❌ Erreur tracking visite:', error);
       return null;
     }
   }
