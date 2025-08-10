@@ -196,19 +196,19 @@ const Footer = () => {
             </p>
             
             <form onSubmit={handleSubscribe} className="max-w-md mx-auto">
-              <div className="flex space-x-4">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                 <input
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Votre adresse email"
-                  className="flex-1 px-4 py-3 bg-gray-800 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:ring-2 focus:ring-accent-500 focus:border-transparent"
+                  className="flex-1 px-4 py-3 bg-gray-800 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:ring-2 focus:ring-accent-500 focus:border-transparent text-sm"
                   disabled={isSubscribing}
                 />
                 <button 
                   type="submit"
                   disabled={isSubscribing || !email.trim()}
-                  className="bg-accent-500 hover:bg-accent-600 disabled:bg-gray-600 disabled:cursor-not-allowed text-white font-semibold px-6 py-3 rounded-lg transition-colors flex items-center"
+                  className="bg-accent-500 hover:bg-accent-600 disabled:bg-gray-600 disabled:cursor-not-allowed text-white font-semibold px-4 py-3 sm:px-6 rounded-lg transition-colors flex items-center justify-center text-sm"
                 >
                   {isSubscribing ? (
                     <>

@@ -83,13 +83,18 @@ Date: ${new Date().toLocaleString('fr-FR')}
       const mailtoLink = `mailto:contact@moroccohealthsolutions.com?subject=Nouvelle demande de contact - ${data.fullName}&body=${encodeURIComponent(emailContent)}`;
       
       // Ouvrir le client email par défaut
-      window.location.href = mailtoLink;
+      window.open(mailtoLink);
+      
+      // Également copier le contenu dans le presse-papiers
+      if (navigator.clipboard) {
+        await navigator.clipboard.writeText(emailContent);
+      }
       
       setSubmitStatus('success');
       reset();
       
-      // Reset status after 5 seconds
-      setTimeout(() => setSubmitStatus(null), 5000);
+      // Reset status after 8 seconds
+      setTimeout(() => setSubmitStatus(null), 8000);
     } catch (error) {
       console.error('Erreur lors de l\'envoi:', error);
       setSubmitStatus('error');
@@ -194,16 +199,16 @@ Date: ${new Date().toLocaleString('fr-FR')}
             initial={{ opacity: 0, scale: 0 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.6 }}
-            className="fixed bottom-6 right-6 z-50"
+            className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50"
           >
             <a
-              href="https://wa.me/212657104984?text=Bonjour, je souhaiterais obtenir des informations sur vos services médicaux"
+              href="https://wa.me/2120716392085?text=Bonjour, je souhaiterais obtenir des informations sur vos services médicaux"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-2xl hover:shadow-3xl transform hover:scale-110 transition-all duration-200 flex items-center"
+              className="bg-green-500 hover:bg-green-600 text-white p-3 sm:p-4 rounded-full shadow-2xl hover:shadow-3xl transform hover:scale-110 transition-all duration-200 flex items-center"
             >
-              <ChatBubbleLeftRightIcon className="h-6 w-6" />
-              <span className="ml-2 hidden md:inline font-semibold">Chat WhatsApp</span>
+              <ChatBubbleLeftRightIcon className="h-5 w-5 sm:h-6 sm:w-6" />
+              <span className="ml-2 hidden lg:inline font-semibold text-sm">Chat WhatsApp</span>
             </a>
           </motion.div>
         </div>
@@ -309,10 +314,13 @@ Date: ${new Date().toLocaleString('fr-FR')}
               {/* Status Messages */}
               {submitStatus === 'success' && (
                 <div className="mb-6 bg-green-50 border border-green-200 rounded-lg p-4 flex items-center space-x-3">
-                  <CheckCircleIcon className="h-6 w-6 text-green-600" />
+                  <CheckCircleIcon className="h-6 w-6 text-green-600 flex-shrink-0" />
                   <div>
                     <h4 className="font-semibold text-green-800">Formulaire rempli avec succès !</h4>
-                    <p className="text-green-600 text-sm">Votre client email s'ouvre automatiquement. Envoyez l'email pour finaliser votre demande.</p>
+                    <p className="text-green-600 text-sm">
+                      Votre client email s'est ouvert automatiquement et le contenu a été copié dans votre presse-papiers. 
+                      Envoyez l'email pour finaliser votre demande ou contactez-nous directement sur WhatsApp.
+                    </p>
                   </div>
                 </div>
               )}

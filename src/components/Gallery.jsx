@@ -214,7 +214,7 @@ const Gallery = () => {
             <button
               key={category.id}
               onClick={() => setSelectedCategory(category.id)}
-              className={`px-6 py-3 rounded-full font-semibold transition-all duration-200 ${
+              className={`px-4 py-2 sm:px-6 sm:py-3 rounded-full font-semibold text-sm sm:text-base transition-all duration-200 ${
                 selectedCategory === category.id
                   ? 'bg-primary-600 text-white shadow-lg transform scale-105'
                   : 'bg-white text-gray-600 hover:bg-primary-50 hover:text-primary-600 border border-gray-200'
