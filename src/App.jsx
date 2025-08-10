@@ -81,7 +81,6 @@ function App() {
       {/* Indicateur discret pour les admins */}
       {process.env.NODE_ENV === 'development' && (
         <div className="fixed bottom-2 left-2 bg-black/50 text-white text-xs px-2 py-1 rounded text-center">
-          Tapez "1234" pour<br />Super Admin
         </div>
       )}
     </div>
