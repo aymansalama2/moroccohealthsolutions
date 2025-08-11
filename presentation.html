@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Présentation - Morocco Health Solutions</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body { background: linear-gradient(135deg, #e0e7ff 0%, #f0fdf4 100%); }
+    .slide { display: none; }
+    .slide.active { display: flex; }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center">
+  <div id="slides" class="w-full max-w-2xl h-[500px] flex items-center justify-center relative">
+    <!-- Slide 1 -->
+    <section class="slide active flex-col items-center justify-center text-center p-8">
+      <h1 class="text-4xl font-bold text-blue-700 mb-4">Morocco Health Solutions</h1>
+      <div class="text-2xl font-semibold text-green-600 mb-2">"Faciliter l’accès aux soins médicaux de qualité au Maroc pour l’Afrique"</div>
+      <div class="text-lg text-gray-700">Plateforme digitale médicale moderne, responsive et intelligente.</div>
+    </section>
+    <!-- Slide 2 -->
+    <section class="slide flex-col items-center justify-center text-center p-8">
+      <h2 class="text-2xl font-bold text-blue-700 mb-4">Fonctionnalités principales</h2>
+      <ul class="text-lg text-gray-700 text-left mx-auto max-w-md space-y-2">
+        <li>✅ Site 100% responsive (mobile, tablette, desktop)</li>
+        <li>✅ Chatbot médical intelligent (Rasa)</li>
+        <li>✅ Prise de contact WhatsApp & email</li>
+        <li>✅ Galerie photos/vidéos, blog, témoignages</li>
+        <li>✅ Formulaire de contact optimisé</li>
+        <li>✅ Animations premium (Framer Motion)</li>
+      </ul>
+    </section>
+    <!-- Slide 3 -->
+    <section class="slide flex-col items-center justify-center text-center p-8">
+      <h2 class="text-2xl font-bold text-blue-700 mb-4">Technologies utilisées</h2>
+      <div class="flex flex-wrap justify-center gap-4 text-lg">
+        <span class="bg-blue-100 px-3 py-1 rounded">React 19</span>
+        <span class="bg-green-100 px-3 py-1 rounded">Vite</span>
+        <span class="bg-cyan-100 px-3 py-1 rounded">Tailwind CSS</span>
+        <span class="bg-purple-100 px-3 py-1 rounded">Framer Motion</span>
+        <span class="bg-yellow-100 px-3 py-1 rounded">Rasa (chatbot)</span>
+        <span class="bg-pink-100 px-3 py-1 rounded">EmailJS</span>
+        <span class="bg-gray-100 px-3 py-1 rounded">Heroicons</span>
+      </div>
+    </section>
+    <!-- Slide 4 -->
+    <section class="slide flex-col items-center justify-center text-center p-8">
+      <h2 class="text-2xl font-bold text-blue-700 mb-4">Structure du projet</h2>
+      <pre class="bg-gray-100 rounded p-4 text-left text-sm overflow-x-auto max-w-full">
+src/
+├── components/
+│   ├── Header.jsx
+│   ├── Hero.jsx
+│   ├── Services.jsx
+│   ├── About.jsx
+│   ├── Process.jsx
+│   ├── Testimonials.jsx
+│   ├── Gallery.jsx
+│   ├── Blog.jsx
+│   ├── ContactForm.jsx
+│   ├── Footer.jsx
+│   └── chatbot/
+│       ├── MoroccoHealthChatbot.js
+│       ├── ChatbotWidget.jsx
+│       ├── ChatbotInterface.css
+│       └── chatbot-config.js
+├── App.jsx
+├── main.jsx
+└── index.css
+      </pre>
+    </section>
+    <!-- Slide 5 -->
+    <section class="slide flex-col items-center justify-center text-center p-8">
+      <h2 class="text-2xl font-bold text-blue-700 mb-4">Points forts UX/UI & Responsive</h2>
+      <ul class="text-lg text-gray-700 text-left mx-auto max-w-md space-y-2">
+        <li>🌟 Design moderne et épuré</li>
+        <li>📱 Expérience mobile optimisée</li>
+        <li>🎨 Couleurs et animations dynamiques</li>
+        <li>🧑‍💻 Navigation intuitive</li>
+        <li>⚡ Performance (Vite, bundle optimisé)</li>
+        <li>🛡️ Accessibilité et compatibilité navigateur</li>
+      </ul>
+    </section>
+    <!-- Slide 6 -->
+    <section class="slide flex-col items-center justify-center text-center p-8">
+      <h2 class="text-2xl font-bold text-blue-700 mb-4">Le Chatbot</h2>
+      <div class="text-lg text-gray-700 mb-2">Chatbot médical intelligent intégré (Rasa) :</div>
+      <ul class="text-lg text-gray-700 text-left mx-auto max-w-md space-y-2">
+        <li>🤖 Réponses médicales personnalisées</li>
+        <li>📅 Prise de rendez-vous automatisée</li>
+        <li>🌍 Multilingue (français, anglais, arabe)</li>
+        <li>🔗 Intégration avec le site et WhatsApp</li>
+      </ul>
+    </section>
+    <!-- Slide 7 -->
+    <section class="slide flex-col items-center justify-center text-center p-8">
+      <h2 class="text-2xl font-bold text-blue-700 mb-4">Contact & Liens</h2>
+      <div class="text-lg text-gray-700 mb-2">Contact : <span class="font-semibold">contact@moroccohealth.ma</span></div>
+      <div class="text-lg text-gray-700 mb-2">WhatsApp : <span class="font-semibold">+212 716 392 085</span></div>
+      <div class="text-lg text-gray-700 mb-2">Site web : <a href="https://moroccohealth.ma" class="text-blue-600 underline">moroccohealth.ma</a></div>
+      <div class="mt-6 text-gray-500 text-sm">Merci pour votre attention !</div>
+    </section>
+    <!-- Navigation -->
+    <button id="prevBtn" class="absolute left-2 top-1/2 -translate-y-1/2 bg-blue-200 hover:bg-blue-400 text-blue-900 font-bold px-4 py-2 rounded-full shadow">&#8592;</button>
+    <button id="nextBtn" class="absolute right-2 top-1/2 -translate-y-1/2 bg-blue-200 hover:bg-blue-400 text-blue-900 font-bold px-4 py-2 rounded-full shadow">&#8594;</button>
+  </div>
+  <script>
+    const slides = document.querySelectorAll('.slide');
+    let current = 0;
+    function showSlide(idx) {
+      slides.forEach((slide, i) => slide.classList.toggle('active', i === idx));
+    }
+    document.getElementById('prevBtn').onclick = () => {
+      current = (current - 1 + slides.length) % slides.length;
+      showSlide(current);
+    };
+    document.getElementById('nextBtn').onclick = () => {
+      current = (current + 1) % slides.length;
+      showSlide(current);
+    };
+    // Touch navigation (mobile)
+    let startX = null;
+    document.getElementById('slides').addEventListener('touchstart', e => {
+      startX = e.touches[0].clientX;
+    });
+    document.getElementById('slides').addEventListener('touchend', e => {
+      if (startX === null) return;
+      let dx = e.changedTouches[0].clientX - startX;
+      if (dx > 50) document.getElementById('prevBtn').click();
+      if (dx < -50) document.getElementById('nextBtn').click();
+      startX = null;
+    });
+  </script>
+</body>
+</html>

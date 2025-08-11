@@ -11,7 +11,6 @@ const Hero = () => {
   const heroImages = [
     "/images/asistant-medical.jpg",
     "/images/Prefab-hospital-patient-room-.jpg",
-    "/images/image article 2.jpg",
     "/images/article 4 2 .png",
     "/images/salle-de-clinique-pour-le-diagnostic-neurologique.jpg",
     "/images/un-medecin-qui-s-occupe-d-un-enfant-afro-americain.jpg"
