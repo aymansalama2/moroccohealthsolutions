@@ -254,21 +254,7 @@ const Footer = () => {
               <a href="#" className="hover:text-accent-400 transition-colors">Mentions Légales</a>
             </div>
             
-            <div className="flex items-center space-x-4">
-              <span className="text-gray-400 text-sm">Suivez-nous:</span>
-              <div className="flex space-x-3">
-                {/* Social Media Icons */}
-                <a href="#" className="w-8 h-8 bg-gray-700 hover:bg-accent-500 rounded-full flex items-center justify-center transition-colors">
-                  <span className="text-xs">f</span>
-                </a>
-                <a href="#" className="w-8 h-8 bg-gray-700 hover:bg-accent-500 rounded-full flex items-center justify-center transition-colors">
-                  <span className="text-xs">in</span>
-                </a>
-                <a href="#" className="w-8 h-8 bg-gray-700 hover:bg-accent-500 rounded-full flex items-center justify-center transition-colors">
-                  <span className="text-xs">tw</span>
-                </a>
-              </div>
-            </div>
+           
           </div>
         </div>
       </div>
