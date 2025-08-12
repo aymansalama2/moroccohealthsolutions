@@ -95,8 +95,8 @@ const Services = () => {
             Nos <span className="gradient-text">Services Médicaux</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Une gamme complète de services médicaux pour répondre à tous vos besoins de santé, 
-            avec des équipements de pointe et une équipe médicale expérimentée.
+            Découvrez une expérience de soins unique, où chaque patient est accueilli avec bienveillance et écoute. 
+            Notre équipe passionnée met tout en œuvre pour transformer votre parcours de santé en un moment rassurant, humain et innovant, grâce à des technologies de pointe et un accompagnement chaleureux à chaque étape.
           </p>
         </motion.div>
 
@@ -134,12 +134,7 @@ const Services = () => {
               </div>
               
               <div className="flex items-center justify-between">
-                <span className="text-primary-600 font-semibold text-sm">En savoir plus</span>
-                <div className="w-8 h-8 bg-primary-100 rounded-full flex items-center justify-center group-hover:bg-primary-200 transition-colors">
-                  <svg className="w-4 h-4 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </div>
+                
               </div>
             </motion.div>
           ))}
@@ -155,7 +150,8 @@ const Services = () => {
           <div className="text-center mb-12">
             <h3 className="text-3xl font-bold mb-4">Pourquoi Choisir Nos Services ?</h3>
             <p className="text-primary-100 max-w-2xl mx-auto">
-              Nous nous engageons à fournir des services médicaux de la plus haute qualité avec un accompagnement personnalisé.
+              Bien plus qu’un simple service médical, nous vous offrons une expérience humaine, rassurante et sur-mesure. 
+             Choisissez l’excellence, choisissez un accompagnement qui place l’humain au cœur de la santé.
             </p>
           </div>
           
@@ -185,6 +181,59 @@ const Services = () => {
           transition={{ duration: 0.6 }}
           className="text-center mt-16"
         >
+          {/* Partners Section */}
+          <div className="mb-12">
+            <h3 className="text-3xl font-bold text-gray-900 mb-8 text-center">
+              Nos Établissements Partenaires
+            </h3>
+            <div className="grid md:grid-cols-3 gap-8">
+              {/* Akdital Life */}
+              <div className="bg-white rounded-xl shadow-lg p-6 border border-gray-100 hover:shadow-xl transition-shadow">
+                <div className="h-24 flex items-center justify-center mb-4">
+                  <img 
+                    src="/images/akdital-logo.svg" 
+                    alt="Akdital Life Logo"
+                    className="max-h-full object-contain"
+                  />
+                </div>
+                <h4 className="text-xl font-bold text-gray-900 text-center mb-2">Akdital Life</h4>
+                <p className="text-gray-600 text-center text-sm">
+                  Leader des soins de santé privés au Maroc
+                </p>
+              </div>
+
+              {/* HGC */}
+              <div className="bg-white rounded-xl shadow-lg p-6 border border-gray-100 hover:shadow-xl transition-shadow">
+                <div className="h-24 flex items-center justify-center mb-4">
+                  <img 
+                    src="/images/hgc-logo.svg" 
+                    alt="HGC Logo"
+                    className="max-h-full object-contain"
+                  />
+                </div>
+                <h4 className="text-xl font-bold text-gray-900 text-center mb-2">Hôpital Général de Casa</h4>
+                <p className="text-gray-600 text-center text-sm">
+                  Excellence en soins hospitaliers
+                </p>
+              </div>
+
+              {/* Clinique Bournazil */}
+              <div className="bg-white rounded-xl shadow-lg p-6 border border-gray-100 hover:shadow-xl transition-shadow">
+                <div className="h-24 flex items-center justify-center mb-4">
+                  <img 
+                    src="/images/bournazil-logo.svg" 
+                    alt="Clinique Bournazil Logo"
+                    className="max-h-full object-contain"
+                  />
+                </div>
+                <h4 className="text-xl font-bold text-gray-900 text-center mb-2">Clinique Bournazil</h4>
+                <p className="text-gray-600 text-center text-sm">
+                  Soins spécialisés de qualité
+                </p>
+              </div>
+            </div>
+          </div>
+
           <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
             <h3 className="text-2xl font-bold text-gray-900 mb-4">
               Prêt à Commencer Votre Parcours Médical ?

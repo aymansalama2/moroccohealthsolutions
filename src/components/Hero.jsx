@@ -99,8 +99,7 @@ const Hero = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-lg sm:text-xl text-blue-100 mb-6 sm:mb-8 leading-relaxed"
             >
-              Morocco Health Solutions vous offre un accès privilégié aux meilleurs soins médicaux au Maroc.
-              Notre expertise au service de votre santé, avec des standards internationaux.
+              Chez Morocco Health Solutions, nous mettons votre santé au cœur de nos priorités. Grâce à des soins médicaux de qualité, une approche humaine et des solutions innovantes, nous vous accompagnons à chaque étape de votre parcours de santé au Maroc
             </motion.p>
 
             {/* Benefits List */}
