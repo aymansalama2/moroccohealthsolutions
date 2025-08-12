@@ -142,9 +142,9 @@ const Gallery = () => {
     },
     {
       id: 14,
-      title: "Équipe Médicale Africaine",
-      description: "Groupe d'étudiants en médecine africains dans les escaliers",
-      image: "/images/groupe-d-etudiants-en-medecine-africains-au-college-debout-dans-les-escaliers.jpg",
+      title: "Équipe Médicale marocaine",
+      description: "Équipe de médecins marocains en uniforme chirurgical",
+      image: "/images/equipe-de-medecins-joyeux-en-uniforme-chirurgical.jpg",
       category: 'equipe',
       location: "Casablanca",
       type: "photo"
